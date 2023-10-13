@@ -1,0 +1,68 @@
+* {
+    font-family: 'Shadows Into Light', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #EDEBE5;
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &-overlay {
+        background-color: rgba(15, 73, 0, 0.3);
+        padding: 20px;
+        border-radius: 8px;
+        height: 100%;
+        margin: auto;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+
+        &__text {
+            padding: 2vh 2vw;
+            color: black;
+            text-align: center;
+            font-size: large;
+            text-wrap: nowrap;
+            @media (max-width: 920px) {
+                text-wrap: wrap;
+            }
+        }
+
+        &__box {
+            text-align: center;
+
+            span {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-image {
+        max-width: 400px;
+        margin: 0 auto;
+
+        @media (max-width: 360px) {
+            max-width: 100vw;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

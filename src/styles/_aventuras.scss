@@ -1,4 +1,4 @@
-@mixin text-styles($fontSize, $fontFamily: cursive, $color: rgb(0, 0, 0)) {
+@mixin text-styles($fontSize, $fontFamily: 'Kalam', $color: rgb(0, 0, 0)) {
     font-size: $fontSize;
     font-family: $fontFamily;
     color: $color;
@@ -36,7 +36,7 @@
         width: 100%;
 
         h1 {
-            @include text-styles(xx-large);
+            @include text-styles(xx-large, 'Shadows Into Light');
             text-align: center;
             text-shadow: 1px 1px 4px #00000028;
             padding-bottom: 18px;
@@ -48,6 +48,7 @@
             
             &__sumary {
                 @include text-styles(20px);
+                font-weight: bold;
                 text-shadow: 1px 1px 4px #00000042;
             }
 

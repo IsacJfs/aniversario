@@ -1,0 +1,65 @@
+@mixin text-styles($fontSize, $fontFamily: cursive, $color: rgb(0, 0, 0)) {
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    color: $color;
+}
+
+@mixin margin-set($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+.aventuras {
+    &-container {
+        padding: 20px 0 60px;
+        max-width: 1024px;
+        margin: 0 auto;
+        display: flex;
+
+        @media (max-width: 767px) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+    &-image {
+        max-width: 400px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+    
+    &__texto {
+        width: 100%;
+
+        h1 {
+            @include text-styles(xx-large);
+            text-align: center;
+            text-shadow: 1px 1px 4px #00000028;
+            padding-bottom: 18px;
+        }
+        
+        &-item {
+            @include margin-set(8px, 2vw);
+            padding-left: 4px;
+            
+            &__sumary {
+                @include text-styles(20px);
+                text-shadow: 1px 1px 4px #00000042;
+            }
+
+            &__text {
+                cursor: pointer;
+                transition: 0.8s ease;
+                @include text-styles(18px, $color: rgb(43, 43, 43));
+                @include margin-set(8px, 2vw);
+                background-color: #9cdf9628;
+                padding: 4px;
+                border-radius: 8px;
+            }
+        }
+    }
+}
